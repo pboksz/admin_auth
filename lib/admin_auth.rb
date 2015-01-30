@@ -1,5 +1,6 @@
-require 'admin_auth/version'
+require 'admin_auth/models'
 require 'admin_auth/routes'
+require 'admin_auth/version'
 
 module AdminAuth
   class Engine < ::Rails::Engine

@@ -1,4 +1,6 @@
 class Admin::PasswordEncryptor
+  require 'bcrypt'
+
   def encrypt_password(password)
     create_encrypted_password(password)
   end
