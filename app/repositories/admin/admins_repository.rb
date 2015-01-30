@@ -1,4 +1,4 @@
-class Admin::AdminsRepository < Admin::DefaultRepository
+class Admin::AdminsRepository
   attr_reader :klass
 
   def initialize
