@@ -20,7 +20,7 @@ class Admin::BaseController < ApplicationController
   end
 
   def after_login_path
-    admin_root_path
+    defined?(super) ? super : root_path
   end
 
   def after_logout_path
