@@ -6,7 +6,7 @@ class Admin::BaseController < ApplicationController
 
   helper_method :current_admin
   def current_admin
-    @current_admin ||= admins_repository.find(session[:admin_id]) if session[:admin_id]
+    @current_admin ||= admins_repository.find(id: session[:admin_id]) if session[:admin_id]
   end
 
   def create_admin_session(admin)

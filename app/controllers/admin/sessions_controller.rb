@@ -10,9 +10,9 @@ class Admin::SessionsController < Admin::BaseController
   end
 
   def create
-    admin = admins_repository.find_by_email(create_params[:email])
+    admin = admins_repository.find(email: create_params[:email])
 
-    if admin && admins_repository.correct_password?(admin.id, create_params[:password])
+    if admin && admin.correct_password?(admin.id, create_params[:password])
       admins_repository.update_login_information(admin.id)
       create_admin_session(admin)
 
