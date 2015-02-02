@@ -49,7 +49,7 @@ module AdminAuth
     end
 
     def password_encryptor
-      @password_encryptor ||= Admin::PasswordEncryptor.new
+      @password_encryptor ||= Encryptor.new
     end
   end
 end
