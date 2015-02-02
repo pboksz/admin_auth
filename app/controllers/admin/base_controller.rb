@@ -30,6 +30,6 @@ class Admin::BaseController < ApplicationController
   private
 
   def admins_repository
-    @admins_repository ||= Admin::AdminsRepository.new
+    @admins_repository ||= Repository.new
   end
 end
