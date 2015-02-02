@@ -1,0 +1,19 @@
+.admin-auth.index
+  %h2= 'Admins'
+  .action= link_to 'Add an Admin', new_admin_admin_path, class: 'button'
+
+  %table
+    %thead
+      %tr
+        %td= 'Email'
+        %td= 'Sign in count'
+        %td= 'Last signed in at'
+        %td= 'Actions'
+    %tbody
+      - admins.each do |admin|
+        %tr
+          %td= admin.email
+          %td= admin.sign_in_count
+          %td= admin.last_sign_in_at
+          %td.action= link_to 'Delete', admin_admin_path(admin), method: :delete,
+                              data: { confirm: 'Are you sure?' }, class: 'button'
