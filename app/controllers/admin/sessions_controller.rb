@@ -29,10 +29,6 @@ class Admin::SessionsController < Admin::BaseController
 
   private
 
-  def admins_repository
-    @admins_repository ||= Repository.new
-  end
-
   def create_params
     params.require(:admin).permit(:email, :password)
   end
