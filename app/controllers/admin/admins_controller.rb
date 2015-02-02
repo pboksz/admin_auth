@@ -11,7 +11,7 @@ class Admin::AdminsController < Admin::BaseController
     admin = admins_repository.create(create_params)
 
     if admin.persisted?
-      redirect_to admin_admins_path
+      redirect_to admin_admins_path(locale)
     else
       render :new, locals: { admin: admin }
     end
@@ -23,12 +23,12 @@ class Admin::AdminsController < Admin::BaseController
 
   def update
     admins_repository.update(params[:id], update_params)
-    redirect_to admin_admins_path
+    redirect_to admin_admins_path(locale)
   end
 
   def destroy
     admins_repository.destroy(params[:id])
-    redirect_to admin_admins_path
+    redirect_to admin_admins_path(locale)
   end
 
   private

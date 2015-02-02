@@ -1,7 +1,12 @@
 class Admin::BaseController < ApplicationController
   before_action :authenticate_admin!
   def authenticate_admin!
-    redirect_to admin_login_path unless current_admin
+    redirect_to admin_login_path(locale) unless current_admin
+  end
+
+  helper_method :locale
+  def locale
+    defined?(super) ? super : params[:locale]
   end
 
   helper_method :current_admin
@@ -19,12 +24,12 @@ class Admin::BaseController < ApplicationController
     session[:admin_id] = nil
   end
 
-  def after_login_path
-    defined?(super) ? super : root_path
+  def after_login_path(new_locale = locale)
+    defined?(super) ? super : root_path(new_locale)
   end
 
-  def after_logout_path
-    root_path
+  def after_logout_path(new_locale = locale)
+    root_path(new_locale)
   end
 
   private

@@ -3,7 +3,7 @@ class Admin::SessionsController < Admin::BaseController
 
   def new
     if current_admin
-      redirect_to after_login_path
+      redirect_to after_login_path(locale)
     else
       render :new, locals: { admin: admins_repository.new }
     end
@@ -16,7 +16,7 @@ class Admin::SessionsController < Admin::BaseController
       admins_repository.update_login_information(admin.id)
       create_admin_session(admin)
 
-      redirect_to after_login_path
+      redirect_to after_login_path(locale)
     else
       render :new, locals: { admin: admins_repository.new }
     end
@@ -24,7 +24,7 @@ class Admin::SessionsController < Admin::BaseController
 
   def destroy
     destroy_admin_session
-    redirect_to after_logout_path
+    redirect_to after_logout_path(locale)
   end
 
   private
