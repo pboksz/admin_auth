@@ -18,7 +18,7 @@ class Admin::AdminsController < Admin::BaseController
   end
 
   def edit
-    render :edit, locals: { admin: admin_repository.find(params[:id]) }
+    render :edit, locals: { admin: admins_repository.find(params[:id]) }
   end
 
   def update

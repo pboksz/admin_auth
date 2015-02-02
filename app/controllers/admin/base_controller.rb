@@ -6,7 +6,7 @@ class Admin::BaseController < ApplicationController
 
   helper_method :locale
   def locale
-    defined?(super) ? super : params[:locale]
+    params[:locale]
   end
 
   helper_method :current_admin
@@ -25,16 +25,16 @@ class Admin::BaseController < ApplicationController
   end
 
   def after_login_path(new_locale = locale)
-    defined?(super) ? super : root_path(new_locale)
+    defined?(super) ? super(new_locale) : root_path(new_locale)
   end
 
   def after_logout_path(new_locale = locale)
-    root_path(new_locale)
+    defined?(super) ? super(new_locale) : root_path(new_locale)
   end
 
   private
 
   def admins_repository
-    @admins_repository ||= Repository.new
+    @admins_repository ||= AdminAuth::Repository.new
   end
 end
