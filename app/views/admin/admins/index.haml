@@ -1,6 +1,8 @@
 .admin-auth.index
   %h2= 'Admins'
-  .action= link_to 'Add an Admin', new_admin_admin_path, class: 'button'
+  .action
+    = link_to 'Add an Admin', new_admin_admin_path, class: 'button'
+    = link_to 'Change your password', edit_admin_admin_path(current_admin), class: 'button'
 
   %table
     %thead

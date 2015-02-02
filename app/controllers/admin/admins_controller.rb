@@ -17,6 +17,15 @@ class Admin::AdminsController < Admin::BaseController
     end
   end
 
+  def edit
+    render :edit, locals: { admin: admin_repository.find(params[:id]) }
+  end
+
+  def update
+    admins_repository.update(params[:id], update_params)
+    redirect_to admin_admins_path
+  end
+
   def destroy
     admins_repository.destroy(params[:id])
     redirect_to admin_admins_path
@@ -26,5 +35,9 @@ class Admin::AdminsController < Admin::BaseController
 
   def create_params
     params.require(:admin).permit(:email, :password, :password_confirmation)
+  end
+
+  def update_params
+    params.require(:admin).permit(:password, :password_confirmation)
   end
 end

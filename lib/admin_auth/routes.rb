@@ -6,7 +6,7 @@ module ActionDispatch::Routing
         post '/login', to: 'sessions#create'
         get '/logout', to: 'sessions#destroy'
 
-        resources :admins, only: [:index, :new, :create, :destroy]
+        resources :admins
 
         root 'sessions#new'
       end
