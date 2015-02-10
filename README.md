@@ -2,7 +2,7 @@
 
 This a small gem that extracts simple admin database authentication functionality.
 
-It is written in a way that will work with both `ActiveRecord` and `Mongoid` and any other ORM that has the methods `all`, `new`, `create`, `where`, `update_attributes`, `destroy`, `touch` and `increment_counter` (And they work in the same fashion).
+It is written in a way that will work with both `ActiveRecord` and `Mongoid` and any other ORM that has the methods `all`, `new`, `create`, `where`, `update_attributes`, `destroy` (And they work in the same fashion).
 
 It requires adding a few things to your code, but handles all the things related to authentication on this basic level, including controllers, views, routing, password encryption (with BCrypt).
 
@@ -26,11 +26,9 @@ Or install it yourself as:
 
 To use this gem you need to do few things:
 
-1. Create an `Admin` model that has four fields:
+1. Create an `Admin` model that has two fields:
     - email (string)
     - encrypted_password (string)
-    - sign_in_count (integer, default: 0)
-    - last_sign_in_at (datetime)
 2. Add the line `include AdminAuth::Models` to your `Admin` model.
 3. Add the line `admin_auth_routes` to your `routes.rb` file.
 4. Add an `after_login_path` method to your `ApplicationController` that returns the path you want to redirect to when logged in.
