@@ -9,8 +9,6 @@ module AdminAuth
       validates :email, format: { with: EMAIL_REGEX }
       validates :password, :password_confirmation, length: { minimum: PASSWORD_MINIMUM }
       validate :passwords_must_match
-
-      before_save :cleanup_passwords
     end
 
     def password
@@ -36,16 +34,18 @@ module AdminAuth
 
     private
 
-    def cleanup_passwords
-      @password = @password_confirmation = nil
-    end
-
     def passwords_must_match
       unless @password == @password_confirmation
         error = 'must match'
         errors[:password] << error
         errors[:password_confirmation] << error
       end
+
+      clear_passwords
+    end
+
+    def clear_passwords
+      @password = @password_confirmation = nil
     end
 
     def password_encryptor
