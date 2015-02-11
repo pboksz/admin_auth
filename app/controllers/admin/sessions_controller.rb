@@ -12,7 +12,7 @@ class Admin::SessionsController < Admin::BaseController
   def create
     admin = admins_repository.find(email: create_params[:email])
 
-    if admin && admin.correct_password?(admin.id, create_params[:password])
+    if admin && admin.correct_password?(create_params[:password])
       create_admin_session(admin)
       redirect_to after_login_path(locale)
     else
