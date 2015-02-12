@@ -1,6 +1,4 @@
 class Admin::SessionsController < Admin::BaseController
-  skip_before_action :authenticate_admin!
-
   def new
     if current_admin
       redirect_to after_login_path(locale)
@@ -26,6 +24,16 @@ class Admin::SessionsController < Admin::BaseController
   end
 
   private
+
+  def create_admin_session(admin)
+    @current_admin = admin
+    session[:admin_id] = admin.id.to_s
+  end
+
+  def destroy_admin_session
+    @current_admin = nil
+    session[:admin_id] = nil
+  end
 
   def create_params
     params.require(:admin).permit(:email, :password)

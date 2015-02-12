@@ -1,4 +1,6 @@
 class Admin::AdminsController < Admin::BaseController
+  before_action :authenticate_admin!
+
   def index
     render :index, locals: { admins: admins_repository.all }
   end
