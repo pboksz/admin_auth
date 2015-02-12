@@ -4,9 +4,9 @@ rvm:
   - 2.1
   - 2.2
 script: bundle exec rspec spec
-#deploy:
-#  provider: rubygems
-#  api_key:
-#    secure:
+deploy:
+  provider: rubygems
+  api_key:
+    secure: 2CoI5hs+BpM23Q7WrZuYoG7FRzcoRVXzfsQugOQrc2qQkQV5OaIZEL1fbO1+5kdWMxd7odKeL6CUpEpkaIw1WBVlJdMBhy4EoA3UchJ1VOA6CH0y1TkaD1vDzC8AWMDNCGxlnzfRQhCiEtcS0rN6IrJj8YBwEmj2fCk47TJ0o1o=
 notifications:
   email: false
