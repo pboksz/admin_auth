@@ -1,5 +1,5 @@
 require 'admin_auth/encryptor'
-require 'admin_auth/models'
+require 'admin_auth/model'
 require 'admin_auth/repository'
 require 'admin_auth/routes'
 require 'admin_auth/version'

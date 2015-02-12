@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe AdminAuth::Models do
+describe AdminAuth::Model do
   class Admin
     include ActiveModel::Model
-    include AdminAuth::Models
+    include AdminAuth::Model
 
     attr_accessor :email, :encrypted_password
   end

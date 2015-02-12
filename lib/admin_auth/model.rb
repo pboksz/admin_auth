@@ -1,5 +1,5 @@
 module AdminAuth
-  module Models
+  module Model
     extend ActiveSupport::Concern
 
     EMAIL_REGEX = /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
