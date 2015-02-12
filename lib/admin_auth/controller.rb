@@ -6,7 +6,7 @@ module AdminAuth
     end
 
     def authenticate_admin!
-      redirect_to login_path(locale) unless current_admin
+      redirect_to admin_login_path(locale) unless current_admin
     end
 
     def current_admin
@@ -18,11 +18,11 @@ module AdminAuth
     end
 
     def after_login_path(new_locale = locale)
-      admins_path(new_locale)
+      admin_admins_path(new_locale)
     end
 
     def after_logout_path(new_locale = locale)
-      root_path(new_locale)
+      admin_root_path(new_locale)
     end
 
     private

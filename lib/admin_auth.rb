@@ -1,3 +1,4 @@
+require 'admin_auth/controller'
 require 'admin_auth/encryptor'
 require 'admin_auth/model'
 require 'admin_auth/repository'
