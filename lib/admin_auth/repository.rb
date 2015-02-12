@@ -3,7 +3,7 @@ module AdminAuth
     attr_reader :klass
 
     def initialize
-      @klass = Admin
+      @klass = ::Admin
     end
 
     def all
