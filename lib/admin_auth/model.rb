@@ -3,10 +3,10 @@ module AdminAuth
     EMAIL_REGEX = /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
     PASSWORD_MINIMUM = 8
 
-    def self.included(controller)
-      controller.validates :email, format: { with: EMAIL_REGEX }
-      controller.validates :password, :password_confirmation, length: { minimum: PASSWORD_MINIMUM }
-      controller.validate :passwords_must_match
+    def self.included(model)
+      model.validates :email, format: { with: EMAIL_REGEX }
+      model.validates :password, :password_confirmation, length: { minimum: PASSWORD_MINIMUM }
+      model.validate :passwords_must_match
     end
 
     def password
