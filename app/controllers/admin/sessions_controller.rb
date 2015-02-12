@@ -1,4 +1,4 @@
-class Admin::SessionsController < Admin::BaseController
+class Admin::SessionsController < ::ApplicationController
   def new
     if current_admin
       redirect_to after_login_path(locale)
