@@ -1,8 +1,8 @@
 module AdminAuth
   class Railtie < ::Rails::Railtie
-    initializer :admin_auth do
-      ::Admin.include(AdminAuth::Model) if defined?(::Admin)
-      ::ApplicationController.include(AdminAuth::Controller) if defined?(::ApplicationController)
+    config.after_initialize do
+      ::ApplicationController.include(AdminAuth::Controller) rescue nil
+      ::Admin.include(AdminAuth::Model) rescue nil
     end
   end
 end
