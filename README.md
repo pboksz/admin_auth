@@ -1,6 +1,6 @@
 # AdminAuth
 
-This a small gem that extracts simple admin database authentication functionality.
+This is a small gem for rails that extracts simple admin database authentication functionality.
 
 It is written in a way that will work with both `ActiveRecord` and `Mongoid` and any other ORM that has the methods `all`, `new`, `create`, `where`, `update_attributes`, `destroy` (And they work in the same fashion).
 

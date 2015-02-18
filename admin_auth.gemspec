@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = AdminAuth::VERSION
   spec.authors       = ["Phillip Boksz"]
   spec.email         = ["pboksz@gmail.com"]
-  spec.summary       = "A gem that helps with basic database authentication."
+  spec.summary       = "A gem for rails that helps with basic database authentication."
   spec.description   = spec.summary
   spec.license       = "MIT"
   spec.homepage      = "https://github.com/pboksz/admin_auth"
