@@ -1,6 +1,6 @@
 .admin-auth.login
   %h2= 'Admin login'
   = form_for admin, url: admin_login_path(locale), method: :post do |f|
-    = f.text_field :email, placeholder: 'email@email.com'
-    = f.password_field :password, placeholder: '********'
-    = f.submit 'Login'
+    .section= f.text_field :email, autofocus: true, placeholder: 'email@email.com'
+    .section= f.password_field :password, placeholder: '********'
+    .section.actions= f.submit 'Login'

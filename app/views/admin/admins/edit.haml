@@ -1,6 +1,6 @@
 .admin-auth.edit
   %h2= 'Edit admin'
   = form_for admin, url: admin_admin_path(locale, admin), method: :put do |f|
-    = f.password_field :password, placeholder: '********'
-    = f.password_field :password_confirmation, placeholder: '********'
-    = f.submit 'Save'
+    .section= f.password_field :password, placeholder: '********'
+    .section= f.password_field :password_confirmation, placeholder: '********'
+    .section.actions= f.submit 'Save'
