@@ -20,7 +20,7 @@ class Admin::AdminsController < ::ApplicationController
   end
 
   def edit
-    render :edit, locals: { admin: admins_repository.find(params[:id]) }
+    render :edit, locals: { admin: admins_repository.find(id: params[:id]) }
   end
 
   def update
