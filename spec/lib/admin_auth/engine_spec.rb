@@ -10,7 +10,7 @@ describe AdminAuth::Engine do
     it { expect(subject.config.autoload_paths).to include "#{root_path}/sessions_controller.rb" }
   end
 
-  describe 'autoload controllers' do
+  describe 'autoload views' do
     let(:root_path) { "#{subject.config.root}/app/views/admin" }
 
     it { expect(subject.config.autoload_paths).to include "#{root_path}/admins/edit.haml" }
