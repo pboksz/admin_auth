@@ -30,7 +30,7 @@ To use this gem you need to do few things:
     - email (string)
     - encrypted_password (string)
 2. Add the line `admin_auth_routes` to your `routes.rb` file.
-3. Now if you add `before_action authenticate_admin!` to any controller it will send the user to the admin login page.
+3. Now if you add `before_action :authenticate_admin!` to any controller it will send the user to the admin login page.
 4. To create an admin you will need to do it in the rails console: `Admin.create(email: 'email@email.com', password: 'password', password_confirmation: 'password')`
 5. Optionally, add an `after_login_path(locale = nil)` method to your `ApplicationController` that returns the path you want to redirect to when logged in.
 6. Optionally, add an `after_logout_path(locale = nil)` method to your `ApplicationController` that returns the path you want to redirect to after logout.
