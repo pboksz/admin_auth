@@ -1,17 +1,11 @@
-.admin-auth.index
+.admin-auth.index{ style: 'text-align: center' }
   %h2= 'Admins'
   .section.actions
     = link_to 'Add an Admin', new_admin_admin_path(locale), class: 'button'
     = link_to 'Change your password', edit_admin_admin_path(locale, current_admin), class: 'button'
 
-  %table
-    %thead
-      %tr
-        %td= 'Email'
-        %td= 'Actions'
-    %tbody
-      - admins.each do |admin|
-        %tr
-          %td= admin.email
-          %td.action= link_to 'Delete', admin_admin_path(locale, admin), method: :delete,
+  - admins.each do |admin|
+    .admin
+      .section= admin.email
+      .section.actions= link_to 'Delete', admin_admin_path(locale, admin), method: :delete,
                               data: { confirm: 'Are you sure?' }, class: 'button'

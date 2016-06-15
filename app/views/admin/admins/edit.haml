@@ -1,4 +1,4 @@
-.admin-auth.edit
+.admin-auth.edit{ style: 'text-align: center' }
   %h2= 'Edit admin'
   = form_for admin, url: admin_admin_path(locale, admin), method: :put do |f|
     .section= f.password_field :password, placeholder: '********'

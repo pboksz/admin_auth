@@ -1,4 +1,4 @@
-.admin-auth.login
+.admin-auth.login{ style: 'text-align: center' }
   %h2= 'Admin login'
   = form_for admin, url: admin_login_path(locale), method: :post do |f|
     .section= f.text_field :email, autofocus: true, placeholder: 'email@email.com'

@@ -1,4 +1,4 @@
-.admin-auth.new
+.admin-auth.new{ style: 'text-align: center' }
   %h2= 'New admin'
   = form_for admin, url: admin_admins_path(locale), method: :post do |f|
     .section= f.text_field :email, placeholder: 'email@email.com'
