@@ -1,11 +1,13 @@
-.admin-auth.index{ style: 'text-align: center' }
-  %h2= 'Admins'
-  .section.actions
-    = link_to 'Add an Admin', new_admin_admin_path(locale), class: 'button'
-    = link_to 'Change your password', edit_admin_admin_path(locale, current_admin), class: 'button'
+.admin-auth-index{ style: 'width: 60%; margin: 0 auto' }
+  %h2
+    = 'Admins'
+    .admin-auth-actions{ style: 'font-weight: normal; font-size: 0.7em; float: right' }
+      = link_to 'Add an Admin', new_admin_admin_path(locale), class: 'button'
+      = link_to 'Change your password', edit_admin_admin_path(locale, current_admin), class: 'button'
+      = link_to 'Logout', admin_logout_path(locale), class: 'button'
 
   - admins.each do |admin|
-    .admin
-      .section= admin.email
-      .section.actions= link_to 'Delete', admin_admin_path(locale, admin), method: :delete,
-                              data: { confirm: 'Are you sure?' }, class: 'button'
+    .admin-auth-admin{ style: 'margin-bottom: 1em; border-bottom: 1px dotted black;' }
+      = admin.email
+      = link_to 'Delete', admin_admin_path(locale, admin), method: :delete,
+                data: { confirm: 'Are you sure?' }, class: 'button', style: 'float: right'

@@ -1,6 +1,6 @@
-.admin-auth.edit{ style: 'text-align: center' }
+.admin-auth-edit{ style: 'text-align: center' }
   %h2= 'Edit admin'
   = form_for admin, url: admin_admin_path(locale, admin), method: :put do |f|
-    .section= f.password_field :password, placeholder: '********'
-    .section= f.password_field :password_confirmation, placeholder: '********'
-    .section.actions= f.submit 'Save'
+    .admin-auth-section= f.password_field :password, placeholder: '********'
+    .admin-auth-section= f.password_field :password_confirmation, placeholder: '********'
+    .admin-auth-actions= f.submit 'Save'

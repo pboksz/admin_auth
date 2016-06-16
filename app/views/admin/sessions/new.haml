@@ -1,6 +1,6 @@
-.admin-auth.login{ style: 'text-align: center' }
+.admin-auth-login{ style: 'text-align: center' }
   %h2= 'Admin login'
   = form_for admin, url: admin_login_path(locale), method: :post do |f|
-    .section= f.text_field :email, autofocus: true, placeholder: 'email@email.com'
-    .section= f.password_field :password, placeholder: '********'
-    .section.actions= f.submit 'Login'
+    .admin-auth-section= f.text_field :email, autofocus: true, placeholder: 'email@email.com'
+    .admin-auth-section= f.password_field :password, placeholder: '********'
+    .admin-auth-actions= f.submit 'Login'

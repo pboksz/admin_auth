@@ -1,7 +1,7 @@
-.admin-auth.new{ style: 'text-align: center' }
+.admin-auth-new{ style: 'text-align: center' }
   %h2= 'New admin'
   = form_for admin, url: admin_admins_path(locale), method: :post do |f|
-    .section= f.text_field :email, placeholder: 'email@email.com'
-    .section= f.password_field :password, placeholder: '********'
-    .section= f.password_field :password_confirmation, placeholder: '********'
-    .section.actions= f.submit 'Save'
+    .admin-auth-section= f.text_field :email, placeholder: 'email@email.com'
+    .admin-auth-section= f.password_field :password, placeholder: '********'
+    .admin-auth-section= f.password_field :password_confirmation, placeholder: '********'
+    .admin-auth-actions= f.submit 'Save'
