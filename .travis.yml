@@ -6,5 +6,7 @@ deploy:
   provider: rubygems
   api_key:
     secure: TRJsjas0Uk0q5jNFNOGS0jUYEpxb6j6TB9H1FiWdbbWEz0WC6/ryqeAUn/Sr+rQDbMo0DHrPyDecytn7hm663bugM3fu5TPns2x+FYpItHVkGOAqeBW1v5nGPhN+M/7djXIDNg9OuPQWD/TigXm+FYbaoHGC3FUF2RTO/TWUfFY=
+  on:
+    tags: true
 notifications:
   email: false
